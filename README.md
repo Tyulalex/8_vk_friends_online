@@ -1,6 +1,7 @@
 # Watcher of Friends Online
 
-[TODO. There will be project description]
+Program tells you who of your vk friends are currently online. When program is run, it first asks
+ to provide login/password from vk. Once provided, show you your online friends.
 
 # How to Install
 
@@ -11,6 +12,19 @@ pip install -r requirements.txt # alternatively try pip3
 ```
 
 Remember, it is recommended to use [virtualenv/venv](https://devman.org/encyclopedia/pip/pip_virtualenv/) for better isolation.
+
+# Code example
+```
+python vk_friends_online.py  #alternatively try python3
+
+Enter login:
+vasya_pupkin
+Enter password:
+********
+Friends Online:
+Иван Иванов
+Вова Пупкин
+```
 
 # Project Goals
 

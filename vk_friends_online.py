@@ -1,15 +1,16 @@
 import vk
+import getpass
 
 
-APP_ID = -1  # чтобы получить app_id, нужно зарегистрировать своё приложение на https://vk.com/dev
+APP_ID = 6385239
 
 
 def get_user_login():
-    pass
+    return input('Enter login:\n')
 
 
 def get_user_password():
-    pass
+    return getpass.getpass('Enter password:\n')
 
 
 def get_online_friends(login, password):
@@ -19,14 +20,24 @@ def get_online_friends(login, password):
         user_password=password,
     )
     api = vk.API(session)
-    # например, api.friends.get()
+    all_friends_list = api.friends.get(fields='online')
+    return [friend for friend in all_friends_list if friend['online'] == 1]
 
 
 def output_friends_to_console(friends_online):
-    pass
+    print('Friends Online:')
+    print("\n".join(
+        ['{} {}'.format(friend.get('first_name'),
+                        friend.get('last_name')) for friend in friends_online]
+    )
+    )
+
 
 if __name__ == '__main__':
     login = get_user_login()
     password = get_user_password()
-    friends_online = get_online_friends(login, password)
-    output_friends_to_console(friends_online)
+    try:
+        friends_online = get_online_friends(login, password)
+        output_friends_to_console(friends_online)
+    except vk.exceptions.VkAuthError:
+        print('Failed to login')
