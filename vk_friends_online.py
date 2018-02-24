@@ -26,7 +26,7 @@ def get_online_friends(login, password):
 
 def output_friends_to_console(friends_online):
     print('Friends Online:')
-    print("\n".join(
+    print('\n'.join(
         ['{} {}'.format(friend.get('first_name'),
                         friend.get('last_name')) for friend in friends_online]
     )
