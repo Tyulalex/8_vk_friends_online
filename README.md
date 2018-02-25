@@ -13,6 +13,10 @@ pip install -r requirements.txt # alternatively try pip3
 
 Remember, it is recommended to use [virtualenv/venv](https://devman.org/encyclopedia/pip/pip_virtualenv/) for better isolation.
 
+edit **vk_friends_online.py** and edit **APP_ID** variable. 
+**APP_ID** shall be replaced with actual app_id. please visit [vk.com/dev](https://vk.com/dev) to get your APP ID 
+
+
 # Code example
 ```
 python vk_friends_online.py  #alternatively try python3
